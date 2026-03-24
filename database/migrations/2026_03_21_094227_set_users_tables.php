@@ -15,11 +15,11 @@ return new class extends Migration
          Schema::create('t_Users', function (Blueprint $table) {
             $table->id('Id');
             $table->string('UserId')->unique();
-            $table->text('Name');
-            $table->text('Email');
-            $table->longText('Password');
-            $table->longText('Phone');
-            $table->longText('Address');
+            $table->string('Name');
+            $table->string('Email')->unique();
+            $table->string('Password');
+            $table->string('Phone')->unique();
+            $table->string('Address');
             $table->string('RememberToken')->nullable();        
             $table->boolean('IsActive')->default(true);
             $table->timestamp('CreatedAt')->nullable();

@@ -21,11 +21,22 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+
+    protected $fillable = [
+        'UserId',
+        'Name',
+        'Email',
+        'Password',
+        'Phone',
+        'Address',
+        'RememberToken',
+        'IsActive',
+        'CreatedAt',
+        'UpdatedAt',
+    ];
+    protected $casts = [
+        'CreatedAt' => 'datetime',
+        'UpdatedAt' => 'datetime',
+        'IsActive' => 'boolean',
+    ];
 }

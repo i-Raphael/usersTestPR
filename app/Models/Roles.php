@@ -23,6 +23,7 @@ class Roles extends Model
         return [
             'CreatedAt' => 'datetime',
             'UpdatedAt' => 'datetime',
+            'IsActive' => 'boolean',
         ];
     }
 

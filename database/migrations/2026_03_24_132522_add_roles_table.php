@@ -15,11 +15,11 @@ return new class extends Migration
         Schema::create('t_Roles', function (Blueprint $table) {
             $table->id('Id');
             $table->string('RoleName')->unique();
-            $table->string('GuardName')->unique();
-            $table->text('Description');
+            $table->string('GuardName');
+            $table->string('Description');
             $table->boolean('IsActive')->default(true);
-            $table->timestamp('CreatedAt')->nullable();
-            $table->timestamp('UpdatedAt')->nullable();
+            $table->timestamps();
+            $table->timestamps();
         });
     }
 
