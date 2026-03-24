@@ -12,14 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('t_Employees', function (Blueprint $table) {
+        Schema::create('t_Roles', function (Blueprint $table) {
             $table->id('Id');
-            $table->string('EmployeeId')->unique();
-            $table->text('Name');
-            $table->text('Email');
-            $table->longText('Phone');
-            $table->longText('Address');
-            $table->string('RememberToken')->nullable();        
+            $table->string('RoleName')->unique();
+            $table->string('GuardName')->unique();
+            $table->text('Description');
             $table->boolean('IsActive')->default(true);
             $table->timestamp('CreatedAt')->nullable();
             $table->timestamp('UpdatedAt')->nullable();
@@ -32,6 +29,6 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::dropIfExists('t_Employees');
+        Schema::dropIfExists('t_Roles');
     }
 };
